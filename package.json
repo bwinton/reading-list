@@ -1,7 +1,7 @@
 {
   "name": "reading-list",
   "title": "Reading List Experiments",
-  "id": "jid1-2HWbGeCFb9mAeA@jetpack",
+  "id": "reading-list@jetpack",
   "description": "An addon to test some experimental Reading List interactions.",
   "author": "Blake Winton <bwinton@mozilla.com>",
   "license": "MPL 2.0",
