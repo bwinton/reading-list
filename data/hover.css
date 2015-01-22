@@ -1,0 +1,25 @@
+#reading-list-overlay {
+  position: absolute;
+  width: 28px;
+  height: 0px;
+  background: #d6d6d6;
+  margin: 2px 0px;
+  z-index: 3000;
+  border-radius: 2px;
+  overflow: hidden;
+  transition: height 200ms;
+  box-sizing: border-box;
+}
+
+#reading-list-overlay > img {
+  width: 22px;
+  height: 22px;
+  margin: 2px;
+  border-radius: 2px;
+  border: 1px solid transparent;
+}
+
+#reading-list-overlay > img:hover {
+  background: #dfdfdf;
+  border: 1px solid #acacac;
+}
