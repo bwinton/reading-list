@@ -14,6 +14,27 @@ gulp.task('init', function (cb) {
   cb();
 });
 
+// Run the test suite.
+gulp.task('test', ['init'], function(cb) {
+  runCfx(cb, 'test');
+});
+
+// Build the XPI
+gulp.task('package', ['init'], function(cb) {
+  runCfx(cb, 'xpi');
+});
+
+// Run Firefox with the add-on.
+gulp.task('run', ['init'], function(cb) {
+  runCfx(cb, 'run', '-p', 'profile.testing');
+});
+
+// By default, run Firefox.
+gulp.task('default', ['run']);
+
+
+// Helper functions.
+
 function getBinary(channel) {
   return ['-b', '/Applications/Local/FirefoxNightly.app'];
 }
@@ -40,17 +61,3 @@ function runCfx(cb, command) {
     cb(code);
   });
 }
-
-gulp.task('test', ['init'], function(cb) {
-  runCfx(cb, 'test');
-});
-
-gulp.task('package', ['init'], function(cb) {
-  runCfx(cb, 'xpi');
-});
-
-gulp.task('run', ['init'], function(cb) {
-  runCfx(cb, 'run', '-p', 'profile.testing');
-});
-
-gulp.task('default', ['run']);
