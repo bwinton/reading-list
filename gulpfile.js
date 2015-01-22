@@ -2,6 +2,9 @@ var env = process.env;
 var spawn = require('child_process').spawn;
 var gulp = require('gulp');
 
+require('gulp-task-list')(gulp);
+
+// Make sure we’re running the add-on SDK.
 gulp.task('init', function (cb) {
   console.log('init');
   if (!env.CUDDLEFISH_ROOT) {
