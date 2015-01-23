@@ -12,7 +12,6 @@
   border-radius: 2px;
   overflow: hidden;
   transition: height 200ms;
-  box-sizing: border-box;
 }
 
 .reading-list-icon {
@@ -33,9 +32,12 @@
  * Multi Button
  */
 
-#multi-button-separator {
+#multi-button-alternate.empty {
   width: 0px;
-  height: 20px;
+}
+
+#multi-button-list {
   border-left: 1px solid #acacac;
-  margin: 0px 4px;
+  padding-left: 4px;
+  width: 26px;
 }
