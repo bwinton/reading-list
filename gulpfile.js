@@ -1,17 +1,18 @@
 var env = process.env;
 var spawn = require('child_process').spawn;
+
 var gulp = require('gulp');
+var jscs = require('gulp-jscs');
 
 require('gulp-task-list')(gulp);
 
 // Make sure we’re running the add-on SDK.
-gulp.task('init', function (cb) {
-  console.log('init');
+gulp.task('init', function () {
   if (!env.CUDDLEFISH_ROOT) {
-    cb('Please run ". bin/activate" in your addon-sdk directory first.');
-    return;
+    return 'Please run ". bin/activate" in your addon-sdk directory first.';
   }
-  cb();
+  gulp.src('lib/*.js')
+    .pipe(jscs());
 });
 
 // Run the test suite.
