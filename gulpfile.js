@@ -11,7 +11,7 @@ gulp.task('init', function () {
   if (!env.CUDDLEFISH_ROOT) {
     return 'Please run ". bin/activate" in your addon-sdk directory first.';
   }
-  gulp.src('lib/*.js')
+  gulp.src(['lib/*.js', 'data/*.js'])
     .pipe(jscs());
 });
 
