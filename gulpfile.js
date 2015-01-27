@@ -1,4 +1,5 @@
 var env = process.env;
+var fs = require('fs');
 var spawn = require('child_process').spawn;
 
 var gulp = require('gulp');
@@ -22,7 +23,24 @@ gulp.task('test', ['init'], function(cb) {
 
 // Build the XPI
 gulp.task('package', ['init'], function(cb) {
-  runCfx(cb, 'xpi');
+  runCfx(cb, 'xpi',
+    '--update-link',
+    'https://people.mozilla.org/~bwinton/reading-list/reading-list.xpi',
+    '--update-url',
+    'https://people.mozilla.org/~bwinton/reading-list/reading-list.update.rdf'
+  );
+});
+
+gulp.task('deploy', ['package'], function(cb) {
+  fs.exists('/Volumes/People/', function (exists) {
+    if (!exists) {
+      cb('Please attach people.mozilla.org in Expandrive first.')
+      return;
+    }
+    gulp.src(['website/*', 'reading-list.*'])
+      .pipe(gulp.dest('/Volumes/People/public_html/reading-list/'));
+    cb();
+  });
 });
 
 // Run Firefox with the add-on.
