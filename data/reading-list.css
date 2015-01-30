@@ -45,3 +45,14 @@
   padding-left: 4px;
   width: 26px;
 }
+
+/*
+ * Share Button
+ */
+
+#share-button-alternate,
+#share-button-list {
+  border-left: 1px solid #acacac;
+  padding-left: 4px;
+  width: 26px;
+}
