@@ -3,27 +3,34 @@
 <head>
   <title>Panel content</title>
   <style type="text/css">
-    img {
-      width: 20px;
-      height: 20px;
+    body {
+      height: 100px;
+      width: 168px;
+      font: menu;
+      background: linear-gradient(hsla(0,0%,99%,1), hsla(0,0%,99%,.975) 10%, hsla(0,0%,98%,.975));
+      border-radius: 3.5px;
+      color: hsl(0,0%,10%);
+      padding: 5px;
+      margin: 0px;
+    }
+
+    .menuitem {
       margin: 2px;
       border-radius: 2px;
       border: 1px solid transparent;
     }
 
-    img:hover {
+    .menuitem:hover {
       background: #dfdfdf;
       border: 1px solid #acacac;
     }
   </style>
 </head>
 <body>
-  <ul>
-    <li>Add to Reading List</li>
-    <li>Send to Other Device</li>
-    <li>Cast to Television</li>
-    <li>Email to Me</li>
-    <li>Email to Someone Else</li>
-  </ul>
+  <div class="menuitem" id="reading_list">Add to Reading List</div>
+  <div class="menuitem" id="send_devices">Send to Other Device</div>
+  <div class="menuitem" id="cast_tv">Cast to Television</div>
+  <div class="menuitem" id="email_me">Email to Me</div>
+  <div class="menuitem" id="email_others">Email to Someone Else</div>
 </body>
 </html>
