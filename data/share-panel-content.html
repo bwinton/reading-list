@@ -25,14 +25,32 @@
       background: #dfdfdf;
       border: 1px solid #acacac;
     }
+
+    .menuitem > img {
+      width: 20px;
+      height: 20px;
+      margin: 0px;
+      padding: 0px;
+    }
+
+    .menuitem > img,
+    .menuitem > span {
+      vertical-align: middle;
+    }
+
   </style>
 </head>
 <body>
-  <div class="menuitem" id="reading_list">Add to Reading List</div>
-  <div class="menuitem" id="send_devices">Send to Other Device</div>
-  <div class="menuitem" id="cast_tv">Email Link</div>
-  <div class="menuitem" id="email_me">Save as PDF</div>
-  <div class="menuitem" id="email_others">Share on…</div>
+  <div class="menuitem" id="reading_list"><img src="clock.png">
+    <span>Add to Reading List</span></div>
+  <div class="menuitem" id="send_devices"><img src="feed.png">
+    <span>Send to Other Device</span></div>
+  <div class="menuitem" id="email_link"><img src="list.png">
+    <span>Email Link</span></div>
+  <div class="menuitem" id="save_pdf"><img src="starH.png">
+    <span>Save as PDF</span></div>
+  <div class="menuitem" id="share_menu"><img src="clock.png">
+    <span>Share on…</span></div>
   <!-- Facebook | Twitter | Share icon… -->
 </body>
 </html>
